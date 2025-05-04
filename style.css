@@ -6,7 +6,9 @@ html, body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
     overflow: hidden;
-  }
+    background-image: url(./crumpled-green-paper-texture.jpg);
+    background-size: cover;
+}
   
   #canvas {
     position: relative;

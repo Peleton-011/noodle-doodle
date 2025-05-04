@@ -24,7 +24,121 @@ let startX = -1,
 	startY = -1,
 	isDrawing = false;
 let currentType = "noodle";
+let drawMode = "brush";
+let floatingPasta = null;
+let angle = 0;
+let placedElements = [];
+let redoStack = [];
 const canvas = document.getElementById("canvas");
+
+function toggleDrawMode() {
+	drawMode = drawMode === "brush" ? "precision" : "brush";
+	if (floatingPasta) {
+		floatingPasta.remove();
+		floatingPasta = null;
+	}
+}
+
+function undo() {
+	const el = placedElements.pop();
+	if (el) {
+		el.remove();
+		redoStack.push(el);
+	}
+}
+
+function redo() {
+	const el = redoStack.pop();
+	if (el) {
+		canvas.appendChild(el);
+		placedElements.push(el);
+	}
+}
+
+function startDraw(e) {
+	e.preventDefault();
+	if (drawMode === "brush") {
+		const { x, y } = getCoords(e);
+		startX = x;
+		startY = y;
+		isDrawing = true;
+	}
+}
+
+function draw(e) {
+	if (drawMode === "brush") {
+		if (!isDrawing) return;
+		e.preventDefault();
+
+		const { x, y } = getCoords(e);
+		const dist = getDistance(startX, startY, x, y);
+		const typeData = pastaTypes[currentType];
+
+		if (dist > typeData.threshold) {
+			const angleDeg = getAngle(startX, startY, x, y) + 45;
+
+			if (currentType === "sauce") {
+				const dot = document.createElement("div");
+				dot.classList.add(typeData.class);
+				dot.style = `position: absolute; left: ${x - 25}px; top: ${y - 25}px;`;
+				canvas.appendChild(dot);
+				placedElements.push(dot);
+			} else {
+				const img = document.createElement("img");
+				img.src = typeData.src;
+				img.classList.add("pasta", typeData.class);
+				img.style.left = `${startX}px`;
+				img.style.top = `${startY}px`;
+				img.style.transform += `rotate(${angleDeg}deg)`;
+				canvas.appendChild(img);
+				placedElements.push(img);
+			}
+
+			document.getElementById("tutorial").style.display = "none";
+			startX = x;
+			startY = y;
+		}
+	} else if (drawMode === "precision") {
+		const { x, y } = getCoords(e);
+		if (!floatingPasta) {
+			floatingPasta = document.createElement("img");
+			floatingPasta.src = pastaTypes[currentType].src;
+			floatingPasta.classList.add("pasta", pastaTypes[currentType].class);
+			canvas.appendChild(floatingPasta);
+		}
+		floatingPasta.style.left = `${x}px`;
+		floatingPasta.style.top = `${y}px`;
+		floatingPasta.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
+	}
+}
+
+function stopDraw() {
+	if (drawMode === "brush") {
+		isDrawing = false;
+		startX = -1;
+		startY = -1;
+	}
+}
+
+canvas.addEventListener("click", (e) => {
+	if (drawMode === "precision" && floatingPasta) {
+		const placed = floatingPasta.cloneNode();
+		placed.style.pointerEvents = "none";
+		canvas.appendChild(placed);
+		placedElements.push(placed);
+		document.getElementById("tutorial").style.display = "none";
+	}
+});
+
+window.addEventListener("wheel", (e) => {
+	if (drawMode === "precision") {
+		e.preventDefault();
+		angle += e.deltaY > 0 ? 5 : -5;
+		if (floatingPasta) {
+			floatingPasta.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
+		}
+	}
+}, { passive: false });
 
 ["mousedown", "touchstart"].forEach((evt) =>
 	window.addEventListener(evt, startDraw)
@@ -33,57 +147,6 @@ const canvas = document.getElementById("canvas");
 ["mouseup", "touchend"].forEach((evt) =>
 	window.addEventListener(evt, stopDraw)
 );
-
-function startDraw(e) {
-	e.preventDefault();
-	const { x, y } = getCoords(e);
-	startX = x;
-	startY = y;
-	isDrawing = true;
-}
-
-function draw(e) {
-	if (!isDrawing) return;
-	e.preventDefault();
-
-	const { x, y } = getCoords(e);
-	const dist = getDistance(startX, startY, x, y);
-	const typeData = pastaTypes[currentType];
-
-	if (dist > typeData.threshold) {
-		const angleDeg = getAngle(startX, startY, x, y) + 45;
-
-		if (currentType === "sauce") {
-			const dot = document.createElement("div");
-			dot.classList.add(typeData.class);
-			dot.style = `position: absolute; left: ${x - 25}px; top: ${
-				y - 25
-			}px;`;
-			canvas.appendChild(dot);
-		} else {
-			console.log(angleDeg);
-
-			const img = document.createElement("img");
-
-			img.src = typeData.src;
-			img.classList.add("pasta", typeData.class);
-			img.style.left = `${startX}px`;
-			img.style.top = `${startY}px`;
-			img.style.transform += `rotate(${angleDeg}deg)`;
-			canvas.appendChild(img);
-		}
-
-		document.getElementById("tutorial").style.display = "none";
-		startX = x;
-		startY = y;
-	}
-}
-
-function stopDraw() {
-	isDrawing = false;
-	startX = -1;
-	startY = -1;
-}
 
 function getCoords(e) {
 	if (e.type.startsWith("touch")) {
@@ -113,4 +176,8 @@ function changeTool(event, val) {
 		.forEach((el) => el.classList.remove("selected"));
 	document.getElementById(val + "-but").classList.add("selected");
 	currentType = val;
+	if (floatingPasta) {
+		floatingPasta.remove();
+		floatingPasta = null;
+	}
 }

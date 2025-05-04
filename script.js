@@ -1,23 +1,23 @@
 const pastaTypes = {
 	noodle: {
-        type: "image",
+		type: "image",
 		src: "../assets/pasta/elbow.svg",
 		threshold: 40,
 		class: "noodle",
 	},
 	fusilli: {
-        type: "image",
+		type: "image",
 		src: "../assets/pasta/fusilli.svg",
 		threshold: 40,
 		class: "long",
 	},
 	sauce: {
-        type: "sauce",
+		type: "sauce",
 		threshold: 5,
 		class: "sauce",
 	},
 	cheese: {
-        type: "image",
+		type: "image",
 		src: "../assets/pasta/cheese.svg",
 		threshold: 40,
 		class: "cheese",
@@ -55,6 +55,8 @@ let redoStack = [];
 
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
+
+const modeToggle = document.getElementById("draw-mode-toggle");
 
 const imageCache = {};
 
@@ -172,9 +174,37 @@ function drawAction(action, alpha = 1) {
 
 function toggleDrawMode() {
 	drawMode = drawMode === "brush" ? "precision" : "brush";
+
+	modeToggle.textContent =
+		drawMode === "brush" ? "Brush" : "Pen";
+
+	updateModeIcon();
+
 	if (preview) {
 		preview = null;
 	}
+}
+
+function updateModeIcon() {
+	const modeIcon = document.getElementById("mode-icon");
+	modeIcon.innerHTML =
+		drawMode === "brush"
+			? `
+<svg width="30" height="30" viewBox="0 0 24 24" fill="none"
+     xmlns="http://www.w3.org/2000/svg">
+  <path d="M4 20c0-2.5 2-4.5 4.5-4.5s3 2 4.5 2 3.5-2 5-4l3-3-5-5-3 3c-2 1.5-4 3.5-4 5s2 1 2 2-2 2-3.5 2S4 17.5 4 20Z"
+        stroke="white" stroke-width="2" stroke-linejoin="round" fill="none"/>
+</svg>
+        `
+			: `
+<svg width="30" height="30" viewBox="0 0 24 24" fill="none"
+     xmlns="http://www.w3.org/2000/svg">
+  <path d="M15 3L21 9L12 18L6 21L9 15L18 6L15 3Z"
+        stroke="white" stroke-width="2" stroke-linejoin="round" fill="none"/>
+  <circle cx="12" cy="12" r="1.5" fill="white"/>
+</svg>
+
+        `;
 }
 
 function exportArt() {
@@ -209,24 +239,23 @@ resizeCanvasToWindow(); // set initial size
 canvas.addEventListener("mousemove", (e) => {
 	const { x, y } = getMouseCoords(e);
 
-    
 	if (drawMode !== "brush") {
-        preview = {
-            type: pastaTypes[currentType].type,
-            x,
-            y,
-            angle: previewAngle,
-            src: pastaTypes[currentType].src,
-            w: 30,
-            h: 30
-        };;
+		preview = {
+			type: pastaTypes[currentType].type,
+			x,
+			y,
+			angle: previewAngle,
+			src: pastaTypes[currentType].src,
+			w: 30,
+			h: 30,
+		};
 		redraw();
 		drawPreview();
-        
+
 		return;
 	}
 
-    if (!isDrawing) return;
+	if (!isDrawing) return;
 
 	const dx = x - lastX;
 	const dy = y - lastY;

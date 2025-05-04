@@ -60,17 +60,90 @@
 					</div>
 					<div class="select-name">Cheese</div>
 				</div>
-				<button onclick="toggleDrawMode()">Toggle Mode</button>
+				<div class="select-wrapper">
+					<div onclick="toggleDrawMode()" class="select" id="mode-icon">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none"
+     xmlns="http://www.w3.org/2000/svg">
+  <path d="M4 20c0-2.5 2-4.5 4.5-4.5s3 2 4.5 2 3.5-2 5-4l3-3-5-5-3 3c-2 1.5-4 3.5-4 5s2 1 2 2-2 2-3.5 2S4 17.5 4 20Z"
+        stroke="white" stroke-width="2" stroke-linejoin="round" fill="none"/>
+</svg>
 
-				<button onclick="undo()">Undo</button>
-				<button onclick="redo()">Redo</button>
+                   
+                    </div>
+					<div class="select-name" id="draw-mode-toggle">
+						Brush
+					</div>
+				</div>
+				<div onclick="undo()" class="select-wrapper">
+					<div class="select">
+						<svg
+							width="30"
+							height="30"
+							viewBox="0 0 24 24"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M9 4L4 9L9 14"
+								stroke="white"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							/>
+							<path
+								d="M4 9H14C17.3137 9 20 11.6863 20 15V16"
+								stroke="white"
+								stroke-width="2"
+								stroke-linecap="round"
+							/>
+						</svg>
+					</div>
+					<div class="select-name">Undo</div>
+				</div>
+				<div onclick="redo()" class="select-wrapper">
+					<div class="select">
+						<svg
+							width="30"
+							height="30"
+							viewBox="0 0 24 24"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<g transform="scale(-1,1) translate(-24,0)">
+							<path
+								d="M9 4L4 9L9 14"
+								stroke="white"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							/>
+							<path
+								d="M4 9H14C17.3137 9 20 11.6863 20 15V16"
+								stroke="white"
+								stroke-width="2"
+								stroke-linecap="round"
+							/>
+							<g />
+						</svg>
+					</div>
+					<div class="select-name">Redo</div>
+				</div>
 
-				<button onclick="exportArt()">Export</button>
+                <div onclick="exportArt()" class="select-wrapper">
+					<div class="select">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                     <path d="M12 3V15" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                     <path d="M6 11L12 17L18 11" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                     <path d="M5 21H19" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                   </svg>
+                   
+					</div>
+					<div class="select-name">Download</div>
+				</div>
 			</div>
 
-			<canvas
-				id="canvas"
-			>Drawing canvas</canvas>
+			<canvas id="canvas">Drawing canvas</canvas>
 		</main>
 	</body>
 </html>

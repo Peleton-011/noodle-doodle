@@ -59,6 +59,13 @@ function preloadImages() {
 	}
 }
 
+const backgroundImg = new Image();
+backgroundImg.src = "./assets/crumpled-green-paper-texture.jpg";
+backgroundImg.onload = () => {
+	redraw(); // ensures background is drawn after it loads
+	console.log("loaded");
+};
+
 preloadImages();
 
 function getMouseCoords(e) {
@@ -69,8 +76,39 @@ function getMouseCoords(e) {
 	};
 }
 
+function drawBackgroundCover(img, ctx, canvas) {
+	const canvasAspect = canvas.width / canvas.height;
+	const imgAspect = img.width / img.height;
+
+	let sx, sy, sw, sh;
+
+	if (imgAspect > canvasAspect) {
+		// Image is wider than canvas
+		sw = img.height * canvasAspect;
+		sh = img.height;
+		sx = (img.width - sw) / 2;
+		sy = 0;
+	} else {
+		// Image is taller than canvas
+		sw = img.width;
+		sh = img.width / canvasAspect;
+		sx = 0;
+		sy = (img.height - sh) / 2;
+	}
+
+	ctx.drawImage(img, sx, sy, sw, sh, 0, 0, canvas.width, canvas.height);
+}
+
 function redraw() {
-	ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+	if (backgroundImg.complete) {
+		drawBackgroundCover(backgroundImg, ctx, canvas);
+	} else {
+		ctx.fillStyle = "#ffffff"; // fallback background
+		ctx.fillRect(0, 0, canvas.width, canvas.height);
+	}
+
 	for (const action of drawHistory) {
 		drawAction(action);
 	}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Macaroni Art</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <script src="/script.js" defer></script>
+</head>
+<body>
+  <header>
+    <div id="tutorial">Click and drag to start drawing with macaroni!</div>
+  </header>
+
+  <main>
+    <div class="choices">
+      <div onclick="changeTool(event, 'noodle')" class="select-wrapper">
+        <div id="noodle-but" class="select">
+          <img src="https://cdn.glitch.com/26c9b2a0-25e1-4ee0-b069-12e7269a1009%2Fmacaroni4.svg?1554246493313" />
+        </div>
+        <div class="select-name">Macaroni</div>
+      </div>
+      <div onclick="changeTool(event, 'fusilli')" class="select-wrapper">
+        <div id="fusilli-but" class="select">
+          <img src="https://cdn.glitch.com/26c9b2a0-25e1-4ee0-b069-12e7269a1009%2Ffusilli5.svg?1554246450461" />
+        </div>
+        <div class="select-name">Fusilli</div>
+      </div>
+      <div onclick="changeTool(event, 'sauce')" class="select-wrapper">
+        <div id="sauce-but" class="select"></div>
+        <div class="select-name">Sauce</div>
+      </div>
+      <div onclick="changeTool(event, 'cheese')" class="select-wrapper">
+        <div id="cheese-but" class="select">
+          <img src="https://cdn.glitch.com/26c9b2a0-25e1-4ee0-b069-12e7269a1009%2Fshredded2.svg?1554428627200" />
+        </div>
+        <div class="select-name">Cheese</div>
+      </div>
+    </div>
+
+    <div id="canvas" style="position: relative; width: 100vw; height: 100vh;"></div>
+  </main>
+
+  <script src="https://button.glitch.me/button.js"></script>
+  <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
+</body>
+</html>

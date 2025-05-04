@@ -1,11 +1,11 @@
 const pastaTypes = {
 	noodle: {
-		src: "https://cdn.glitch.com/26c9b2a0-25e1-4ee0-b069-12e7269a1009%2Fmacaroni4.svg?1554246493313",
+		src: "../assets/pasta/elbow.svg",
 		threshold: 40,
 		class: "noodle",
 	},
 	fusilli: {
-		src: "https://cdn.glitch.com/26c9b2a0-25e1-4ee0-b069-12e7269a1009%2Ffusilli5.svg?1554246450461",
+		src: "../assets/pasta/fusilli.svg",
 		threshold: 40,
 		class: "long",
 	},
@@ -14,22 +14,99 @@ const pastaTypes = {
 		class: "sauce",
 	},
 	cheese: {
-		src: "https://cdn.glitch.com/26c9b2a0-25e1-4ee0-b069-12e7269a1009%2Fshredded2.svg?1554428627200",
+		src: "../assets/pasta/cheese.svg",
 		threshold: 40,
 		class: "cheese",
 	},
 };
 
+/* Element data structure
+
+{
+  type: "image" | "sauce",
+  x: number,
+  y: number,
+  angle?: number,  // for pasta
+  src?: string,    // pasta only
+  w?: number,
+  h?: number
+}
+
+*/
+
 let startX = -1,
-	startY = -1,
-	isDrawing = false;
+	startY = -1;
 let currentType = "noodle";
 let drawMode = "brush";
 let floatingPasta = null;
 let angle = 0;
-let placedElements = [];
+
+let drawHistory = [];
 let redoStack = [];
 const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+
+const imageCache = {};
+
+function preloadImages() {
+	for (const key in pastaTypes) {
+		const src = pastaTypes[key].src;
+		if (src) {
+			const img = new Image();
+			img.src = src;
+			imageCache[src] = img;
+		}
+	}
+}
+
+preloadImages();
+
+function getMouseCoords(e) {
+	const rect = canvas.getBoundingClientRect();
+	return {
+		x: e.clientX - rect.left,
+		y: e.clientY - rect.top,
+	};
+}
+
+function redraw() {
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+	for (const action of drawHistory) {
+		drawAction(action);
+	}
+}
+
+function drawPreview() {
+	if (!preview) return;
+	drawAction(preview, 0.5); // optional: draw semi-transparent
+}
+
+function drawAction(action, alpha = 1) {
+	ctx.save();
+	ctx.globalAlpha = alpha;
+
+	if (action.type === "image") {
+		const img = imageCache[action.src];
+		if (img && img.complete) {
+			ctx.translate(action.x, action.y);
+			ctx.rotate((action.angle * Math.PI) / 180);
+			ctx.drawImage(
+				img,
+				-action.w / 2,
+				-action.h / 2,
+				action.w,
+				action.h
+			);
+		}
+	} else if (action.type === "sauce") {
+		ctx.beginPath();
+		ctx.arc(action.x, action.y, 25, 0, 2 * Math.PI);
+		ctx.fillStyle = "#d63031";
+		ctx.fill();
+	}
+
+	ctx.restore();
+}
 
 function toggleDrawMode() {
 	drawMode = drawMode === "brush" ? "precision" : "brush";
@@ -39,77 +116,24 @@ function toggleDrawMode() {
 	}
 }
 
-const captureScreen = async () => {
-	const screenshotBtn = document.querySelector("#src-btn");
-	try {
-		const stream = await navigator.mediaDevices.getDisplayMedia({
-			preferCurrentTab: true,
-		});
-		const video = document.createElement("video");
-
-		video.addEventListener("loadedmetadata", () => {
-			const canvas = document.createElement("canvas");
-			const ctx = canvas.getContext("2d");
-			canvas.width = video.videoWidth;
-			canvas.height = video.videoHeight;
-
-			video.play();
-
-			// Small delay to ensure frame is ready
-			setTimeout(() => {
-				ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-				stream.getVideoTracks()[0].stop();
-
-				// Download canvas as PNG
-				const link = document.createElement("a");
-				link.download = "macaroni-art-screenshot.png";
-				link.href = canvas.toDataURL("image/png");
-				link.click();
-			}, 100); // wait a bit after play() to ensure the frame is ready
-		});
-
-		video.srcObject = stream;
-	} catch (error) {
-		alert("Failed to capture screenshot!");
-		console.error(error);
-	}
-};
-
-function exportArtre() {
-	const canvasEl = document.getElementById("canvas");
-
-	// Force layout reflow (sometimes helps for async images)
-	canvasEl.offsetHeight;
-
-	html2canvas(canvasEl, {
-		backgroundColor: null,
-		useCORS: true,
-		allowTaint: true,
-		logging: true,
-		width: canvasEl.offsetWidth,
-		height: canvasEl.offsetHeight,
-		scrollY: -window.scrollY,
-	}).then((canvas) => {
-		const link = document.createElement("a");
-		link.download = "macaroni-art.png";
-		link.href = canvas.toDataURL("image/png");
-		link.click();
-	});
+function exportArt() {
+	const link = document.createElement("a");
+	link.download = "macaroni-art.png";
+	link.href = canvas.toDataURL("image/png");
+	link.click();
 }
 
 function undo() {
-	const el = placedElements.pop();
-	if (el) {
-		el.remove();
-		redoStack.push(el);
+	if (drawHistory.length > 0) {
+		redoStack.push(drawHistory.pop());
+		redraw();
 	}
 }
 
 function redo() {
-	const el = redoStack.pop();
-	if (el) {
-		canvas.appendChild(el);
-		placedElements.push(el);
+	if (redoStack.length > 0) {
+		drawHistory.push(redoStack.pop());
+		redraw();
 	}
 }
 
@@ -145,12 +169,11 @@ function draw(e) {
 				placedElements.push(dot);
 			} else {
 				const img = document.createElement("img");
-				img.crossOrigin = "anonymous";
 				img.src = typeData.src;
 				img.classList.add("pasta", typeData.class);
-				img.style.left = `${startX}px`;
-				img.style.top = `${startY}px`;
-				img.style.transform += `rotate(${angleDeg}deg)`;
+				img.style.left = `${startX - 15}px`;
+				img.style.top = `${startY - 15}px`;
+				// img.style.transform = `rotate(${angleDeg}deg)`;
 				canvas.appendChild(img);
 				placedElements.push(img);
 			}
@@ -163,7 +186,6 @@ function draw(e) {
 		const { x, y } = getCoords(e);
 		if (!floatingPasta) {
 			floatingPasta = document.createElement("img");
-			floatingPasta.crossOrigin = "anonymous";
 			floatingPasta.src = pastaTypes[currentType].src;
 			floatingPasta.classList.add("pasta", pastaTypes[currentType].class);
 			canvas.appendChild(floatingPasta);
@@ -182,15 +204,15 @@ function stopDraw() {
 	}
 }
 
-canvas.addEventListener("click", (e) => {
-	if (drawMode === "precision" && floatingPasta) {
-		const placed = floatingPasta.cloneNode();
-		placed.style.pointerEvents = "none";
-		canvas.appendChild(placed);
-		placedElements.push(placed);
-		document.getElementById("tutorial").style.display = "none";
-	}
-});
+// canvas.addEventListener("click", (e) => {
+// 	if (drawMode === "precision" && floatingPasta) {
+// 		const placed = floatingPasta.cloneNode();
+// 		placed.style.pointerEvents = "none";
+// 		canvas.appendChild(placed);
+// 		placedElements.push(placed);
+// 		document.getElementById("tutorial").style.display = "none";
+// 	}
+// });
 
 window.addEventListener(
 	"wheel",
@@ -206,13 +228,112 @@ window.addEventListener(
 	{ passive: false }
 );
 
-["mousedown", "touchstart"].forEach((evt) =>
-	window.addEventListener(evt, startDraw)
+// ["mousedown", "touchstart"].forEach((evt) =>
+// 	window.addEventListener(evt, startDraw)
+// );
+// ["mousemove", "touchmove"].forEach((evt) => window.addEventListener(evt, draw));
+// ["mouseup", "touchend"].forEach((evt) =>
+// 	window.addEventListener(evt, stopDraw)
+// );
+
+let isDrawing = false;
+let lastX = 0,
+	lastY = 0;
+
+canvas.addEventListener("mousedown", (e) => {
+	if (drawMode === "brush") {
+		isDrawing = true;
+		const { x, y } = getMouseCoords(e);
+		lastX = x;
+		lastY = y;
+	}
+});
+
+canvas.addEventListener("mousemove", (e) => {
+	if (!isDrawing || drawMode !== "brush") return;
+	const { x, y } = getMouseCoords(e);
+	const dx = x - lastX;
+	const dy = y - lastY;
+	const dist = Math.sqrt(dx * dx + dy * dy);
+
+	const pasta = pastaTypes[currentType];
+	if (dist > pasta.threshold) {
+		const angle = (Math.atan2(dy, dx) * 180) / Math.PI;
+
+		if (currentType === "sauce") {
+			drawHistory.push({ type: "sauce", x, y });
+		} else {
+			drawHistory.push({
+				type: "image",
+				src: pasta.src,
+				x,
+				y,
+				angle,
+				w: 30,
+				h: 30,
+			});
+		}
+
+		lastX = x;
+		lastY = y;
+		redraw();
+	}
+});
+
+canvas.addEventListener("mouseup", () => (isDrawing = false));
+
+let preview = null;
+let previewAngle = 0;
+
+canvas.addEventListener("mousemove", (e) => {
+	if (drawMode !== "precision") return;
+	const { x, y } = getMouseCoords(e);
+
+	preview = { x, y, angle: previewAngle, ...pastaTypes[currentType] };
+	redraw();
+	drawPreview();
+});
+
+canvas.addEventListener(
+	"wheel",
+	(e) => {
+		if (drawMode === "precision") {
+			e.preventDefault();
+			previewAngle += e.deltaY > 0 ? 5 : -5;
+			if (preview) {
+				preview.angle = previewAngle;
+				redraw();
+				drawPreview();
+			}
+		}
+	},
+	{ passive: false }
 );
-["mousemove", "touchmove"].forEach((evt) => window.addEventListener(evt, draw));
-["mouseup", "touchend"].forEach((evt) =>
-	window.addEventListener(evt, stopDraw)
-);
+
+canvas.addEventListener("click", (e) => {
+	if (drawMode === "precision" && preview) {
+		drawHistory.push({
+			type: "image",
+			src: preview.src,
+			x: preview.x,
+			y: preview.y,
+			angle: preview.angle,
+			w: 30,
+			h: 30,
+		});
+		redraw();
+	}
+});
+
+function resizeCanvasToWindow() {
+	const canvas = document.getElementById("canvas");
+	canvas.width = window.innerWidth;
+	canvas.height = window.innerHeight;
+	redraw(); // re-render the content after resize
+}
+
+window.addEventListener("resize", resizeCanvasToWindow);
+resizeCanvasToWindow(); // set initial size
 
 function getCoords(e) {
 	if (e.type.startsWith("touch")) {

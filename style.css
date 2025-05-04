@@ -9,13 +9,12 @@ body {
 }
 
 #canvas {
-	overflow: hidden;
+    display: block;
+    width: 100vw;
+    height: 100vh;
 	background-size: cover;
-	background-image: url(./crumpled-green-paper-texture.jpg);
+	background-image: url(./assets/crumpled-green-paper-texture.jpg);
 	position: relative;
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
 }
 
 /* General Pasta Element Styles */
@@ -25,12 +24,12 @@ body {
 	height: 30px;
 	user-drag: none;
 	user-select: none;
+	pointer-events: auto; /* allow capture */
+	image-rendering: auto;
 	-moz-user-select: none;
 	-webkit-user-drag: none;
 	-webkit-user-select: none;
 	-ms-user-select: none;
-	transform: translate(-50%, -50%);
-	pointer-events: none;
 }
 
 /* Specific Pasta Variants */
@@ -55,7 +54,8 @@ body {
 	animation: expand 0.4s ease-out;
 	background-color: #d63031;
 	/* z-index: 1; */
-	pointer-events: none;
+    pointer-events: auto;
+    will-change: transform;
 }
 
 /* Canvas UI */
@@ -136,62 +136,4 @@ body {
 	#tutorial {
 		font-size: 16px;
 	}
-}
-
-#src-btn,
-.screenshot {
-	position: fixed;
-	left: 50%;
-	transform: translate(-50%, -50%);
-}
-#src-btn {
-	bottom: 15px;
-	border: none;
-	outline: none;
-	color: #fff;
-	cursor: pointer;
-	font-size: 1rem;
-	padding: 15px 25px;
-	border-radius: 30px;
-	background: #4a98f7;
-}
-.src-preview {
-	position: fixed;
-	left: 0;
-	top: 0;
-	height: 100%;
-	width: 100%;
-	opacity: 0;
-	pointer-events: none;
-	background: rgba(0, 0, 0, 0.65);
-	transition: all 0.15s ease;
-    z-index: 100;
-}
-.src-preview.show {
-	opacity: 1;
-	pointer-events: auto;
-}
-.src-preview .screenshot {
-	width: 70%;
-	top: 50%;
-	opacity: 0;
-	pointer-events: none;
-	aspect-ratio: 16 / 9;
-	transition: transform 0.15s ease;
-	transform: translate(-50%, -50%) scale(0.9);
-}
-.src-preview.show .screenshot {
-	opacity: 1;
-	pointer-events: auto;
-	transform: translate(-50%, -50%) scale(1);
-}
-.screenshot #close-btn {
-	position: absolute;
-	right: -25px;
-	color: #fff;
-	cursor: pointer;
-	font-size: 1.1rem;
-}
-.screenshot img {
-	width: 100%;
 }

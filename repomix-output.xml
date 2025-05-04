@@ -1,0 +1,813 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+4. Repository files, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+<additional_info>
+
+</additional_info>
+
+</file_summary>
+
+<directory_structure>
+assets/
+  pasta/
+    cheese.svg
+    elbow.svg
+    fusilli.svg
+.gitignore
+index.html
+script.js
+style.css
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path="assets/pasta/cheese.svg">
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 877.18 719">
+    <defs>
+        <style>.cls-1{fill:#fee9a6;stroke:#fecb6f;stroke-miterlimit:10;stroke-width:8px;}</style>
+    </defs>
+    <title>shredded2</title>
+    <rect class="cls-1" x="840.04" y="991.21" width="283.35" height="50.15"
+        transform="translate(-1031.27 -393.19) rotate(-12.6)" />
+    <rect class="cls-1" x="944.34" y="1200.21" width="283.35" height="50.15"
+        transform="matrix(0.87, 0.5, -0.5, 0.87, -75.07, -1010.68)" />
+    <rect class="cls-1" x="1176.58" y="1070.31" width="283.35" height="50.15"
+        transform="translate(-923.8 -512.57) rotate(-5.01)" />
+    <rect class="cls-1" x="1293.18" y="1235.31" width="283.35" height="50.15"
+        transform="translate(-1242.42 131.76) rotate(-26.22)" />
+    <rect class="cls-1" x="935.86" y="832.85" width="283.35" height="50.15"
+        transform="translate(-642.41 -827.86) rotate(11.4)" />
+    <rect class="cls-1" x="1276.88" y="853.49" width="283.35" height="50.15"
+        transform="translate(-126.35 -1262.46) rotate(32.98)" />
+    <rect class="cls-1" x="244.33" y="4" width="283.35" height="50.15" />
+    <rect class="cls-1" x="1523.13" y="912.84" width="283.35" height="50.15"
+        transform="translate(1572.49 -1455.27) rotate(83.42)" />
+</svg>
+</file>
+
+<file path="assets/pasta/elbow.svg">
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 339 339" style="enable-background:new 0 0 339 339;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#EEE045;}
+	.st1{fill:#FFEAA7;}
+	.st2{fill:#FDCB6E;}
+</style>
+<path class="st0" d="M234.9,50.2C234.9,50.2,235,50.2,234.9,50.2C235,50.2,234.9,50.2,234.9,50.2z"/>
+<path class="st0" d="M225.9,59.1c0.3-0.3,0.7-0.6,1-0.9C226.6,58.5,226.2,58.8,225.9,59.1z"/>
+<path class="st0" d="M221.7,62.8c0.1-0.1,0.2-0.2,0.3-0.3C221.9,62.6,221.8,62.7,221.7,62.8z"/>
+<path class="st0" d="M61.7,222.9c0.1-0.1,0.2-0.2,0.3-0.3C61.8,222.7,61.7,222.8,61.7,222.9z"/>
+<path class="st1" d="M238.4,46.3C238.4,46.3,238.4,46.3,238.4,46.3l16.3,16.3c68.2,68.2,80.4,166.9,27.1,220.2
+	c-53.2,53.2-152,41-220.2-27.1l-16.3-16.3c0,0,0,0,0,0C28.8,253.7,12.8,261,7.6,255.7l27,27c68.2,68.2,179.1,68.2,247.3,0
+	c68.2-68.2,68.2-179.1,0-247.3l-27-27C260.1,13.7,252.9,29.7,238.4,46.3z"/>
+<path class="st0" d="M49.3,235.8C49.3,235.8,49.3,235.8,49.3,235.8C49.3,235.8,49.3,235.8,49.3,235.8z"/>
+<path class="st1" d="M248.4,249.3c39.6-39.6,36.6-107-6.6-150.2l-29.3-29.3c0,0,0,0,0,0c-11.2,7.7-20.9,11.3-25.7,8.9l25.9,25.9
+	c30.1,30.1,30.1,79,0,109.1c-30.1,30.1-79,30.1-109.1,0l-25.9-25.9c2.4,4.8-1.2,14.5-8.9,25.7l29.3,29.3
+	C141.5,286,208.8,288.9,248.4,249.3z"/>
+<g>
+	<path class="st1" d="M57.3,227.8c0.3-0.3,0.6-0.7,0.9-1C57.9,227.1,57.6,227.4,57.3,227.8z"/>
+	<path class="st1" d="M45.4,239.3c1.3-1.1,2.6-2.3,3.9-3.5C48,237,46.7,238.2,45.4,239.3z"/>
+	<path class="st1" d="M58.2,226.8c1.2-1.3,2.3-2.6,3.4-3.9C60.6,224.2,59.4,225.5,58.2,226.8z"/>
+	<path class="st1" d="M68.9,213.4c-2.1,3-4.4,6-7,9.1C64.5,219.4,66.9,216.4,68.9,213.4z"/>
+	<path class="st1" d="M222,62.5c1.3-1.1,2.6-2.2,3.9-3.4C224.6,60.3,223.3,61.4,222,62.5z"/>
+	<path class="st1" d="M212.6,69.8c3-2.1,6-4.4,9.1-7C218.6,65.4,215.5,67.7,212.6,69.8z"/>
+	<path class="st1" d="M234.9,50.2c-1.2,1.3-2.5,2.6-3.7,3.9c-1.4,1.4-2.8,2.8-4.3,4.1c1.4-1.3,2.9-2.7,4.3-4.1
+		C232.5,52.8,233.7,51.5,234.9,50.2z"/>
+	<path class="st1" d="M57.3,227.8c-1.3,1.4-2.7,2.9-4.1,4.3c-1.3,1.3-2.6,2.5-3.9,3.7c1.3-1.2,2.6-2.5,3.9-3.7
+		C54.6,230.6,56,229.2,57.3,227.8z"/>
+	<path class="st1" d="M235,50.1c1.2-1.3,2.4-2.6,3.5-3.9C237.3,47.6,236.2,48.9,235,50.1z"/>
+	<path class="st1" d="M61.7,255.6c68.2,68.2,166.9,80.4,220.2,27.1c53.2-53.2,41-152-27.1-220.2l-16.3-16.3c0,0,0,0,0,0
+		c-1.1,1.3-2.3,2.6-3.5,3.9c0,0,0,0,0,0c-1.2,1.3-2.5,2.6-3.7,3.9c-1.4,1.4-2.9,2.8-4.3,4.1c-0.3,0.3-0.7,0.6-1,0.9
+		c-1.3,1.2-2.6,2.3-3.9,3.4c-0.1,0.1-0.2,0.2-0.3,0.3c-3.1,2.6-6.2,4.9-9.1,7c0,0,0,0,0,0l29.3,29.3c43.2,43.2,46.2,110.6,6.6,150.2
+		s-107,36.6-150.2-6.6l-29.3-29.3c-2.1,3-4.4,6-7,9.1c-0.1,0.1-0.2,0.2-0.3,0.3c-1.1,1.3-2.3,2.6-3.4,3.9c-0.3,0.3-0.6,0.7-0.9,1
+		c-1.3,1.4-2.7,2.9-4.1,4.3c-1.3,1.3-2.6,2.5-3.9,3.7c0,0,0,0,0,0c-1.3,1.2-2.6,2.4-3.9,3.5c0,0,0,0,0,0L61.7,255.6z"/>
+</g>
+<path class="st1" d="M254.9,8.4c-6.1-6.1-26.5,4.5-45.6,23.7s-29.7,39.6-23.7,45.6c6.1,6.1,26.5-4.5,45.6-23.7
+	C250.3,34.9,260.9,14.5,254.9,8.4z"/>
+<path class="st1" d="M76.9,186.4c-6.1-6.1-26.5,4.5-45.6,23.7c-19.1,19.1-29.7,39.6-23.7,45.6c6.1,6.1,26.5-4.5,45.6-23.7
+	C72.3,212.9,82.9,192.5,76.9,186.4z"/>
+<path class="st2" d="M190.5,85.3c-3.9,0-7-1.2-9.2-3.3c-7.6-7.6-3.2-27.2,23.7-54.1C231.8,1,251.5-3.4,259.1,4.2
+	c7.6,7.6,3.2,27.2-23.7,54.1C216.1,77.6,200.6,85.3,190.5,85.3z M189.8,73.4c3.4,0.8,18.2-4.7,37.1-23.6
+	c18.9-18.9,24.4-33.8,23.6-37.1c-3.4-0.8-18.2,4.7-37.1,23.6C194.5,55.2,189,70.1,189.8,73.4z"/>
+<path class="st2" d="M12.5,263.3c-3.9,0-7-1.2-9.2-3.3c-7.6-7.6-3.2-27.2,23.7-54.1c26.9-26.9,46.5-31.2,54.1-23.7
+	c7.6,7.6,3.2,27.2-23.7,54.1C38.1,255.6,22.6,263.3,12.5,263.3z M11.8,251.4c3.4,0.8,18.2-4.7,37.1-23.6
+	c18.9-18.9,24.4-33.8,23.6-37.1c-3.4-0.8-18.2,4.7-37.1,23.6S11,248.1,11.8,251.4z"/>
+<path class="st2" d="M158.2,339.9c-46.3,0-92.6-17.6-127.9-52.9l-27-27c-1.2-1.2-1.8-2.7-1.8-4.2c0-1.5,0.6-3.1,1.8-4.2
+	c2.3-2.3,6-2.3,8.3-0.1c2.9,1.1,18-4.3,37.3-23.5c19.5-19.5,24.7-34.6,23.5-37.4c-1.3-2.6-0.6-5.8,1.8-7.6c2.4-1.7,5.7-1.5,7.8,0.6
+	l25.9,25.9c27.7,27.7,72.9,27.7,100.6,0c27.7-27.7,27.7-72.9,0-100.6l-25.9-25.9c-2.1-2.1-2.3-5.4-0.6-7.7c1.7-2.4,4.9-3.1,7.6-1.8
+	c2.8,1.2,17.9-4.1,37.4-23.5c19.3-19.3,24.6-34.3,23.5-37.3c-1.1-1.2-1.6-2.6-1.6-4.1c0-1.5,0.6-3.1,1.8-4.2c2.3-2.3,6.1-2.3,8.5,0
+	l27,27c70.5,70.5,70.5,185.3,0,255.8C250.9,322.2,204.5,339.9,158.2,339.9z M21.8,261.5l17,17c65.9,65.8,173,65.9,238.8,0
+	c65.8-65.8,65.8-173,0-238.8l-17-17c-3.2,9.4-11.1,21.5-25.2,35.6c-13.8,13.8-26,21.7-35.4,25l17,17c32.4,32.4,32.4,85.1,0,117.5
+	c-32.4,32.4-85.1,32.4-117.5,0l-17-17c-3.4,9.5-11.3,21.7-25,35.4C43.3,250.4,31.2,258.3,21.8,261.5z M11.8,251.5
+	C11.8,251.5,11.8,251.5,11.8,251.5z M250.6,12.6C250.6,12.6,250.6,12.7,250.6,12.6z"/>
+</svg>
+</file>
+
+<file path="assets/pasta/fusilli.svg">
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 439 439" style="enable-background:new 0 0 439 439;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFECA7;}
+	.st1{fill:#EEE045;}
+	.st2{fill:#FDCB6E;}
+</style>
+<path class="st0" d="M71.9,315.2l6-7.1l1-1.2c2.2-2.7,4.5-5.4,6.8-8l0.1-0.1c4.1-4.7,8.5-9.4,13-13.9c6.3-6.4,13-11.8,19.2-15.6
+	c-0.1,0-0.1,0.1-0.1,0.1l6.3-7.5l1-1.2c2.2-2.7,4.5-5.4,6.8-8l0.1-0.1c4.1-4.7,8.5-9.4,13-13.9c6.3-6.4,13-11.8,19.2-15.6
+	c-0.1,0-0.1,0.1-0.2,0.1l6.3-7.5l1-1.2c2.2-2.7,4.5-5.4,6.8-8l0-0.1h0c4.1-4.7,8.5-9.4,13-13.9c6.3-6.4,13-11.8,19.2-15.6
+	c-0.1,0-0.1,0.1-0.1,0.1l6.3-7.5l1-1.2c2.2-2.7,4.5-5.4,6.8-8l0-0.1c4.1-4.7,8.5-9.4,13-13.9c6.3-6.4,13-11.8,19.2-15.6
+	c-0.1,0-0.1,0.1-0.2,0.1l6.3-7.5l1-1.2c2.2-2.7,4.5-5.4,6.8-8l0-0.1c4.1-4.7,8.5-9.4,13-13.9c6.8-6.8,13.9-12.5,20.4-16.4l4.9-5.9h0
+	c11.7-14.6,25.1-29.5,41.6-42.6L329.5,6c-23.2,9.4-36.5,27.2-46.2,46.2l0,0l-3.8,7c-9,1.4-17.6,5.6-24.4,12.5
+	c-4.5,4.5-8.5,9.5-12.1,14.7l0,0.1c-2,3-3.9,6.1-5.6,9.2l-0.8,1.4l-5.2,8.6c0.1,0,0.1,0,0.2,0c-8.4,1.6-16.4,5.7-22.7,12.1
+	c-4.5,4.5-8.5,9.5-12.1,14.7l0,0l0,0.1c-2,3-3.9,6.1-5.6,9.2l-0.8,1.4l-5.2,8.6c0.1,0,0.1,0,0.2,0c-8.4,1.6-16.4,5.7-22.7,12.1
+	c-4.5,4.5-8.5,9.5-12.1,14.7l0,0l0,0.1c-2,3-3.9,6.1-5.6,9.2l-0.8,1.4l-5.2,8.6c0.1,0,0.1,0,0.2,0c-8.4,1.6-16.4,5.7-22.7,12.1
+	c-4.5,4.5-8.5,9.5-12.1,14.7l0,0.1c-2,3-3.9,6-5.6,9.2l-0.8,1.4l-5.2,8.6c0.1,0,0.1,0,0.2,0c-8.4,1.6-16.4,5.7-22.7,12.1
+	c-4.5,4.5-8.5,9.5-12.1,14.7l0,0.1c-2,3-3.9,6.1-5.6,9.2l-0.8,1.4l-4.9,8.1c-8.1,1.6-15.7,5.6-21.8,11.7c-4.6,4.6-8.8,9.7-12.5,15.2
+	v0l0,0.1c-2,3-3.9,6.1-5.6,9.2L6,327.7l47.3,2.7c0,0,0.1-0.1,0.1-0.1C59.5,324.1,65.9,319,71.9,315.2z"/>
+<path class="st1" d="M76.5,333.8l0.9,1.3l-0.5-1.5L76.5,333.8z"/>
+<path class="st1" d="M362.5,52.2l-0.9-1.3l0.5,1.5L362.5,52.2z"/>
+<path class="st0" d="M155.7,333.7l3.6-6.6c9.6-1.6,18.7-6.3,25.5-14c6.7-7.6,12-16.2,16.6-25.1l0,0l3.9-7.1
+	c9.7-1.5,18.9-6.3,25.8-14c6.7-7.6,12-16.2,16.6-25.1l0,0l3.9-7.1c9.7-1.5,18.9-6.3,25.8-14c6.7-7.6,12-16.2,16.6-25.1l0,0l3.9-7.1
+	c9.7-1.5,18.9-6.3,25.8-14c6.7-7.6,12-16.2,16.6-25.1l0,0l3.9-7.1c9.7-1.5,18.9-6.3,25.8-14c6.7-7.6,12-16.2,16.6-25.1l0,0l3.8-6.9
+	c8.9-1.3,17.3-5.4,24-12.1c4.6-4.6,8.8-9.7,12.5-15.2v0l0-0.1c2-3,3.9-6.1,5.6-9.2l0.8-1.4l-47.3-2.7c0,0-0.1,0.1-0.1,0.1
+	c-6.6,6.7-13.6,12.2-20,16l-4.8,5.9h0c-6,7.4-12.4,15-19.4,22.3c-7.2,7.5-14.9,13.7-21.9,17.9l-4.9,6h0c-6,7.4-12.4,15-19.4,22.3
+	c-7.2,7.5-14.9,13.7-21.9,17.9l-4.9,6h0c-6,7.4-12.4,15-19.4,22.3c-7.2,7.5-14.9,13.7-21.9,17.9l-4.9,6h0c-6,7.4-12.4,15-19.4,22.3
+	c-7.2,7.5-14.9,13.7-21.9,17.9l-4.9,6h0c-6,7.4-12.4,15-19.4,22.3c-7.1,7.4-14.7,13.6-21.7,17.8l-4.6,5.6h0
+	c-11.7,14.6-25.1,29.5-41.6,42.6l20.9,29.2C132.7,370.6,146,352.8,155.7,333.7L155.7,333.7z"/>
+<path class="st0" d="M130.2,308.2L130.2,308.2l4.6-5.6c7-4.2,14.6-10.4,21.7-17.8c7-7.3,13.4-14.8,19.4-22.3h0l4.9-6
+	c7-4.2,14.7-10.5,21.9-17.9c7-7.3,13.4-14.8,19.4-22.3h0l4.9-6c7-4.2,14.7-10.5,21.9-17.9c7-7.3,13.4-14.8,19.4-22.3h0l4.9-6
+	c7-4.2,14.7-10.5,21.9-17.9c7-7.3,13.4-14.8,19.4-22.3h0l4.9-6c7-4.2,14.7-10.5,21.9-17.9c7-7.3,13.4-14.8,19.4-22.3h0l4.8-5.9
+	c6.4-3.8,13.4-9.4,20-16c0,0,0.1-0.1,0.1-0.1l-21.6-1.2l-1.6-2.2l-0.4,0.2l-0.5-1.5l-11.2-15.7c-16.4,13.1-29.8,28-41.6,42.6h0
+	l-4.9,5.9c-6.5,3.9-13.7,9.6-20.4,16.4c-4.5,4.5-8.8,9.1-13,13.9l0,0.1c-2.3,2.7-4.6,5.3-6.8,8l-1,1.2l-6.3,7.5c0,0,0.1-0.1,0.1-0.1
+	c-6.2,3.9-12.8,9.3-19.2,15.6c-4.5,4.5-8.8,9.1-13,13.9l-0.1,0.1c-2.3,2.7-4.6,5.3-6.8,8l-1,1.2l-6.3,7.5c0.1,0,0.1-0.1,0.1-0.1
+	c-6.2,3.9-12.8,9.3-19.2,15.6c-4.5,4.5-8.8,9.1-13,13.9l-0.1,0.1c-2.3,2.7-4.6,5.3-6.8,8l-1,1.2l-6.3,7.5c0,0,0.1-0.1,0.1-0.1
+	c-6.2,3.9-12.8,9.3-19.2,15.6c-4.5,4.5-8.8,9.1-13,13.9l0,0.1c-2.3,2.7-4.6,5.3-6.8,8l-1,1.2l-6.3,7.5c0.1,0,0.1-0.1,0.1-0.1
+	c-6.2,3.9-12.8,9.3-19.2,15.6c-4.5,4.5-8.8,9.1-13,13.9h0l0,0.1c-2.3,2.7-4.6,5.3-6.8,8l-1,1.2l-6,7.1c-6,3.8-12.4,8.9-18.5,15.1
+	c0,0-0.1,0.1-0.1,0.1l21.6,1.2l1.6,2.2l0.4-0.2l0.5,1.5l11.2,15.7C105,337.7,118.5,322.8,130.2,308.2z"/>
+<g>
+	<path class="st2" d="M152.3,333.7c-7.5,0-15.1-1.7-22.2-5.2l-59.2-29.3c-7.2-3.3-15.3-4.3-23.2-2.7c-2.3,0.5-4.7-0.5-6.1-2.4
+		c-1.4-1.9-1.5-4.5-0.2-6.5l5.8-9.8c1.8-3.3,3.7-6.5,5.9-9.6c0-0.1,0.1-0.1,0.1-0.2c3.8-5.6,8.1-10.8,12.8-15.6
+		c15.1-15.3,38.2-19.2,57.6-9.6l58.8,29.1c6.8,3.2,14.5,4.3,22,3.1c2.3-0.4,4.5,0.6,5.8,2.5c1.3,1.9,1.4,4.3,0.3,6.3l-3.6,6.5
+		c-0.1,0.1-0.1,0.3-0.2,0.4c-5.4,10.6-11.1,19.2-17.4,26.4C179.8,327.9,166.1,333.7,152.3,333.7z M57.5,283.8
+		c6.3,0.3,12.6,1.8,18.5,4.5l59.4,29.4c15.3,7.6,33.8,4,44.9-8.6c5.3-5.9,10.1-13.1,14.7-21.8c-6.2-0.4-12.2-2-17.9-4.7l-58.9-29.2
+		c-14.7-7.3-32.2-4.4-43.7,7.3c-4.2,4.3-8,8.9-11.4,13.9c-2,2.9-3.8,5.8-5.3,8.8L57.5,283.8z"/>
+	<path class="st2" d="M109.5,386c-1.9,0-3.7-0.9-4.9-2.5l-32.9-46.1l-66-3.7c-2.1-0.1-3.9-1.3-4.9-3.1c-1-1.8-1-4,0-5.8l0.8-1.4
+		c1.8-3.3,3.7-6.5,5.9-9.7c0-0.1,0.1-0.1,0.1-0.2c3.9-5.7,8.4-11.1,13.3-16c14.9-15,37.9-18.6,57.1-9.1l58.8,29.1
+		c6.8,3.2,14.5,4.3,22,3.1c2.3-0.4,4.5,0.6,5.8,2.5c1.3,1.9,1.4,4.3,0.3,6.3l-3.6,6.5c-0.1,0.1-0.1,0.3-0.2,0.4
+		c-8,15.8-21.9,38-49.3,49.1C111,385.8,110.2,386,109.5,386z M16.1,322.3l59.1,3.3c1.8,0.1,3.5,1,4.5,2.5l31.7,44.4
+		c15.6-7.4,27.4-19.8,37.8-39.4c-6.2-0.4-12.2-2-17.9-4.7l-58.9-29.2c-14.6-7.2-32-4.5-43.3,6.8c-4.4,4.4-8.3,9.2-11.8,14.3
+		C17,321,16.5,321.6,16.1,322.3z"/>
+	<path class="st2" d="M383.5,102.8c-7.6,0-15.2-1.7-22.3-5.2l-58.8-29.1c-6.8-3.2-14.5-4.3-22-3.1c-2.3,0.4-4.5-0.6-5.8-2.5
+		c-1.3-1.9-1.4-4.3-0.3-6.3l3.6-6.5c0.1-0.1,0.1-0.3,0.2-0.4c8-15.8,21.9-38,49.3-49.1c2.6-1,5.5-0.2,7.1,2.1l32.9,46.1l66,3.7
+		c2,0.1,3.9,1.3,4.9,3.1c1,1.8,1,4,0,5.8l-0.8,1.4c-1.8,3.3-3.7,6.5-5.9,9.6c0,0.1-0.1,0.1-0.1,0.2c-3.9,5.7-8.4,11.1-13.3,16
+		C408.9,97.8,396.3,102.8,383.5,102.8z M289.7,52.9c6.2,0.4,12.2,2,17.9,4.7l58.9,29.2c14.6,7.2,32,4.5,43.3-6.8
+		c4.4-4.4,8.3-9.2,11.8-14.3c0.4-0.6,0.9-1.3,1.3-1.9l-59.1-3.3c-1.8-0.1-3.5-1-4.5-2.5l-31.7-44.4
+		C311.9,20.9,300.1,33.3,289.7,52.9z"/>
+	<path class="st2" d="M198.5,287.5c-7.5,0-15.1-1.7-22.2-5.2L117.1,253c-7.2-3.3-15.2-4.3-23.2-2.7c-2.3,0.5-4.7-0.5-6.1-2.4
+		c-1.4-1.9-1.5-4.5-0.2-6.5l5.8-9.8c1.8-3.3,3.8-6.6,5.9-9.7c0,0,0-0.1,0.1-0.1c3.8-5.6,8.1-10.8,12.8-15.6
+		c15.1-15.3,38.2-19.2,57.6-9.6l58.8,29.1c6.8,3.2,14.5,4.3,22,3.1c2.3-0.4,4.5,0.6,5.8,2.5c1.3,1.9,1.4,4.3,0.3,6.3l-3.6,6.5
+		c-0.1,0.1-0.1,0.3-0.2,0.4c-5.4,10.6-11.1,19.2-17.4,26.3v0C226,281.7,212.4,287.5,198.5,287.5z M103.8,237.6
+		c6.3,0.3,12.6,1.8,18.5,4.5l59.4,29.4c15.3,7.6,33.8,4,44.9-8.6c5.2-5.9,10.1-13.1,14.7-21.8c-6.2-0.4-12.2-2-17.9-4.7l-58.9-29.2
+		c-14.7-7.3-32.2-4.4-43.7,7.3c-4.2,4.3-8,8.9-11.4,13.9c0,0,0,0,0,0.1c0,0,0,0,0,0c-1.9,2.8-3.7,5.8-5.3,8.7L103.8,237.6z"/>
+	<path class="st2" d="M244.7,241.3c-7.5,0-15.1-1.7-22.2-5.2l-59.2-29.3c-7.2-3.3-15.3-4.3-23.2-2.7c-2.3,0.5-4.7-0.5-6.1-2.4
+		c-1.4-1.9-1.5-4.5-0.2-6.5l5.8-9.8c1.8-3.3,3.7-6.5,5.9-9.6c0-0.1,0.1-0.1,0.1-0.2c3.8-5.6,8.1-10.8,12.8-15.6
+		c15.1-15.3,38.2-19.2,57.6-9.6l58.8,29.1c6.8,3.2,14.5,4.3,22,3.1c2.3-0.4,4.5,0.6,5.8,2.5s1.4,4.3,0.3,6.3l-3.6,6.5
+		c-0.1,0.1-0.1,0.3-0.2,0.4c-5.4,10.6-11.1,19.2-17.4,26.4C272.2,235.5,258.6,241.3,244.7,241.3z M150,191.4
+		c6.3,0.3,12.6,1.8,18.5,4.5l59.4,29.4c15.3,7.6,33.8,4,44.9-8.6c5.3-5.9,10.1-13.1,14.7-21.8c-6.2-0.4-12.2-2-17.9-4.7L210.6,161
+		c-14.7-7.3-32.2-4.4-43.7,7.3c-4.2,4.3-8,8.9-11.4,13.9c-2,2.9-3.8,5.8-5.3,8.8L150,191.4z"/>
+	<path class="st2" d="M290.9,195.1c-7.5,0-15.1-1.7-22.2-5.2l-59.2-29.3c-7.2-3.3-15.3-4.3-23.2-2.7c-2.3,0.5-4.7-0.5-6.1-2.4
+		s-1.5-4.5-0.2-6.5l5.8-9.8c1.8-3.3,3.8-6.6,5.9-9.7c0,0,0-0.1,0.1-0.1c3.8-5.6,8.1-10.8,12.8-15.6c15.1-15.3,38.2-19.2,57.6-9.6
+		l58.8,29.1c6.8,3.2,14.5,4.3,22,3.1c2.3-0.4,4.5,0.6,5.8,2.5c1.3,1.9,1.4,4.3,0.3,6.3l-3.6,6.5c-0.1,0.1-0.1,0.3-0.2,0.4
+		c-5.4,10.6-11.1,19.2-17.4,26.4C318.4,189.3,304.8,195.1,290.9,195.1z M196.2,145.2c6.3,0.3,12.6,1.8,18.5,4.5l59.3,29.4
+		c15.3,7.6,33.8,4,45-8.6v0c5.2-5.9,10.1-13.1,14.6-21.8c-6.2-0.4-12.2-2-17.9-4.7l-58.9-29.2c-14.7-7.3-32.2-4.4-43.7,7.3
+		c-4.2,4.3-8,8.9-11.4,13.9c0,0,0,0,0,0.1c0,0,0,0,0,0c-1.9,2.8-3.7,5.8-5.3,8.7L196.2,145.2z"/>
+	<path class="st2" d="M337.1,148.9c-7.5,0-15.1-1.7-22.2-5.2l-59.2-29.3c-7.2-3.3-15.3-4.3-23.2-2.7c-2.3,0.5-4.7-0.5-6.1-2.4
+		s-1.5-4.5-0.2-6.5l5.8-9.8c1.8-3.3,3.7-6.5,5.9-9.6c0-0.1,0.1-0.1,0.1-0.2c3.8-5.6,8.1-10.8,12.8-15.6
+		c15.1-15.3,38.2-19.2,57.6-9.6L367.2,87c6.8,3.2,14.5,4.3,22,3.1c2.3-0.4,4.5,0.6,5.8,2.5s1.4,4.3,0.3,6.3l-3.6,6.5
+		c-0.1,0.1-0.1,0.3-0.2,0.4c-5.4,10.6-11.1,19.2-17.4,26.4C364.6,143.1,351,148.9,337.1,148.9z M242.4,99c6.3,0.3,12.6,1.8,18.5,4.5
+		l59.4,29.4c15.3,7.6,33.8,4,45-8.6c5.2-5.9,10.1-13.1,14.7-21.8c-6.2-0.4-12.2-2-17.9-4.7l-58.9-29.2c-14.7-7.3-32.2-4.4-43.7,7.3
+		c-4.2,4.3-8,8.9-11.4,13.9c-2,2.9-3.8,5.8-5.3,8.8L242.4,99z"/>
+</g>
+</svg>
+</file>
+
+<file path=".gitignore">
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Diagnostic reports (https://nodejs.org/api/report.html)
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Directory for instrumented libs generated by jscoverage/JSCover
+lib-cov
+
+# Coverage directory used by tools like istanbul
+coverage
+*.lcov
+
+# nyc test coverage
+.nyc_output
+
+# Grunt intermediate storage (https://gruntjs.com/creating-plugins#storing-task-files)
+.grunt
+
+# Bower dependency directory (https://bower.io/)
+bower_components
+
+# node-waf configuration
+.lock-wscript
+
+# Compiled binary addons (https://nodejs.org/api/addons.html)
+build/Release
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Snowpack dependency directory (https://snowpack.dev/)
+web_modules/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional stylelint cache
+.stylelintcache
+
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# dotenv environment variable files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# parcel-bundler cache (https://parceljs.org/)
+.cache
+.parcel-cache
+
+# Next.js build output
+.next
+out
+
+# Nuxt.js build / generate output
+.nuxt
+dist
+
+# Gatsby files
+.cache/
+# Comment in the public line in if your project uses Gatsby and not Next.js
+# https://nextjs.org/blog/next-9-1#public-directory-support
+# public
+
+# vuepress build output
+.vuepress/dist
+
+# vuepress v2.x temp and cache directory
+.temp
+.cache
+
+# vitepress build output
+**/.vitepress/dist
+
+# vitepress cache directory
+**/.vitepress/cache
+
+# Docusaurus cache and generated files
+.docusaurus
+
+# Serverless directories
+.serverless/
+
+# FuseBox cache
+.fusebox/
+
+# DynamoDB Local files
+.dynamodb/
+
+# TernJS port file
+.tern-port
+
+# Stores VSCode versions used for testing VSCode extensions
+.vscode-test
+
+# yarn v2
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+</file>
+
+<file path="script.js">
+const pastaTypes = {
+	noodle: {
+		src: "../assets/pasta/elbow.svg",
+		threshold: 40,
+		class: "noodle",
+	},
+	fusilli: {
+		src: "../assets/pasta/fusilli.svg",
+		threshold: 40,
+		class: "long",
+	},
+	sauce: {
+		threshold: 5,
+		class: "sauce",
+	},
+	cheese: {
+		src: "../assets/pasta/cheese.svg",
+		threshold: 40,
+		class: "cheese",
+	},
+};
+
+let startX = -1,
+	startY = -1,
+	isDrawing = false;
+let currentType = "noodle";
+let drawMode = "brush";
+let floatingPasta = null;
+let angle = 0;
+let placedElements = [];
+let redoStack = [];
+const canvas = document.getElementById("canvas");
+
+function toggleDrawMode() {
+	drawMode = drawMode === "brush" ? "precision" : "brush";
+	if (floatingPasta) {
+		floatingPasta.remove();
+		floatingPasta = null;
+	}
+}
+
+function exportArt() {
+	const canvas = document.getElementById("canvas");
+	const images = canvas.querySelectorAll("img");
+	const promises = Array.from(images).map((img) => {
+		if (img.complete) return Promise.resolve();
+		return new Promise((resolve) => {
+			img.onload = resolve;
+			img.onerror = resolve;
+		});
+	});
+
+	Promise.all(promises).then(() => {
+		html2canvas(canvas, {
+			backgroundColor: "#ffffff",
+			useCORS: true,
+		}).then((canvasImage) => {
+			const link = document.createElement("a");
+			link.download = "macaroni-art.png";
+			link.href = canvasImage.toDataURL("image/png");
+			link.click();
+		});
+	});
+}
+
+function undo() {
+	const el = placedElements.pop();
+	if (el) {
+		el.remove();
+		redoStack.push(el);
+	}
+}
+
+function redo() {
+	const el = redoStack.pop();
+	if (el) {
+		canvas.appendChild(el);
+		placedElements.push(el);
+	}
+}
+
+function startDraw(e) {
+	e.preventDefault();
+	if (drawMode === "brush") {
+		const { x, y } = getCoords(e);
+		startX = x;
+		startY = y;
+		isDrawing = true;
+	}
+}
+
+function draw(e) {
+	if (drawMode === "brush") {
+		if (!isDrawing) return;
+		e.preventDefault();
+
+		const { x, y } = getCoords(e);
+		const dist = getDistance(startX, startY, x, y);
+		const typeData = pastaTypes[currentType];
+
+		if (dist > typeData.threshold) {
+			const angleDeg = getAngle(startX, startY, x, y) + 45;
+
+			if (currentType === "sauce") {
+				const dot = document.createElement("div");
+				dot.classList.add(typeData.class);
+				dot.style = `position: absolute; left: ${x - 25}px; top: ${
+					y - 25
+				}px;`;
+				canvas.appendChild(dot);
+				placedElements.push(dot);
+			} else {
+				const img = document.createElement("img");
+				img.src = typeData.src;
+				img.classList.add("pasta", typeData.class);
+				img.style.left = `${startX - 15}px`;
+				img.style.top = `${startY - 15}px`;
+				// img.style.transform = `rotate(${angleDeg}deg)`;
+				canvas.appendChild(img);
+				placedElements.push(img);
+			}
+
+			document.getElementById("tutorial").style.display = "none";
+			startX = x;
+			startY = y;
+		}
+	} else if (drawMode === "precision") {
+		const { x, y } = getCoords(e);
+		if (!floatingPasta) {
+			floatingPasta = document.createElement("img");
+			floatingPasta.src = pastaTypes[currentType].src;
+			floatingPasta.classList.add("pasta", pastaTypes[currentType].class);
+			canvas.appendChild(floatingPasta);
+		}
+		floatingPasta.style.left = `${x}px`;
+		floatingPasta.style.top = `${y}px`;
+		floatingPasta.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
+	}
+}
+
+function stopDraw() {
+	if (drawMode === "brush") {
+		isDrawing = false;
+		startX = -1;
+		startY = -1;
+	}
+}
+
+canvas.addEventListener("click", (e) => {
+	if (drawMode === "precision" && floatingPasta) {
+		const placed = floatingPasta.cloneNode();
+		placed.style.pointerEvents = "none";
+		canvas.appendChild(placed);
+		placedElements.push(placed);
+		document.getElementById("tutorial").style.display = "none";
+	}
+});
+
+window.addEventListener(
+	"wheel",
+	(e) => {
+		if (drawMode === "precision") {
+			e.preventDefault();
+			angle += e.deltaY > 0 ? 5 : -5;
+			if (floatingPasta) {
+				floatingPasta.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
+			}
+		}
+	},
+	{ passive: false }
+);
+
+["mousedown", "touchstart"].forEach((evt) =>
+	window.addEventListener(evt, startDraw)
+);
+["mousemove", "touchmove"].forEach((evt) => window.addEventListener(evt, draw));
+["mouseup", "touchend"].forEach((evt) =>
+	window.addEventListener(evt, stopDraw)
+);
+
+function getCoords(e) {
+	if (e.type.startsWith("touch")) {
+		return {
+			x: e.touches[0].clientX,
+			y: e.touches[0].clientY,
+		};
+	}
+	return {
+		x: e.clientX,
+		y: e.clientY,
+	};
+}
+
+function getDistance(x1, y1, x2, y2) {
+	return Math.hypot(x2 - x1, y2 - y1);
+}
+
+function getAngle(x1, y1, x2, y2) {
+	return Math.atan2(y2 - y1, x2 - x1) * (180 / Math.PI);
+}
+
+function changeTool(event, val) {
+	event.preventDefault();
+	document
+		.querySelectorAll(".select")
+		.forEach((el) => el.classList.remove("selected"));
+	document.getElementById(val + "-but").classList.add("selected");
+	currentType = val;
+	if (floatingPasta) {
+		floatingPasta.remove();
+		floatingPasta = null;
+	}
+}
+</file>
+
+<file path="index.html">
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Noodle Doodle</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="/style.css" />
+		<link
+			href="https://fonts.googleapis.com/css?family=Roboto"
+			rel="stylesheet"
+		/>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+		<script src="/script.js" defer></script>
+	</head>
+	<body>
+		<header>
+			<div id="tutorial">
+				Click and drag to start drawing with macaroni!
+			</div>
+		</header>
+
+		<main>
+			<div class="choices">
+				<div
+					onclick="changeTool(event, 'noodle')"
+					class="select-wrapper"
+				>
+					<div id="noodle-but" class="select">
+						<img
+							src="https://cdn.glitch.com/26c9b2a0-25e1-4ee0-b069-12e7269a1009%2Fmacaroni4.svg?1554246493313"
+						/>
+					</div>
+					<div class="select-name">Macaroni</div>
+				</div>
+				<div
+					onclick="changeTool(event, 'fusilli')"
+					class="select-wrapper"
+				>
+					<div id="fusilli-but" class="select">
+						<img
+							src="https://cdn.glitch.com/26c9b2a0-25e1-4ee0-b069-12e7269a1009%2Ffusilli5.svg?1554246450461"
+						/>
+					</div>
+					<div class="select-name">Fusilli</div>
+				</div>
+				<div
+					onclick="changeTool(event, 'sauce')"
+					class="select-wrapper"
+				>
+					<div id="sauce-but" class="select"></div>
+					<div class="select-name">Sauce</div>
+				</div>
+				<div
+					onclick="changeTool(event, 'cheese')"
+					class="select-wrapper"
+				>
+					<div id="cheese-but" class="select">
+						<img
+							src="https://cdn.glitch.com/26c9b2a0-25e1-4ee0-b069-12e7269a1009%2Fshredded2.svg?1554428627200"
+						/>
+					</div>
+					<div class="select-name">Cheese</div>
+				</div>
+				<button onclick="toggleDrawMode()">Toggle Mode</button>
+
+				<button onclick="undo()">Undo</button>
+				<button onclick="redo()">Redo</button>
+
+				<button onclick="exportArt()">Export</button>
+			</div>
+
+			<div
+				id="canvas"
+				style="position: relative; width: 100vw; height: 100vh"
+			></div>
+		</main>
+	</body>
+</html>
+</file>
+
+<file path="style.css">
+/* Reset & Base Styles */
+html,
+body {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	font-family: "Roboto", sans-serif;
+}
+
+#canvas {
+	overflow: hidden;
+	background-size: cover;
+	background-image: url(./assets/crumpled-green-paper-texture.jpg);
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+/* General Pasta Element Styles */
+.pasta {
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	user-drag: none;
+	user-select: none;
+	pointer-events: auto; /* allow capture */
+	image-rendering: auto;
+	-moz-user-select: none;
+	-webkit-user-drag: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+
+/* Specific Pasta Variants */
+.noodle {
+	/* inherits .pasta */
+}
+
+.long {
+	/* inherits .pasta */
+}
+
+.cheese {
+	/* inherits .pasta */
+	/* z-index: 10; */
+}
+
+.sauce {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	border-radius: 50px;
+	animation: expand 0.4s ease-out;
+	background-color: #d63031;
+	/* z-index: 1; */
+    pointer-events: auto;
+    will-change: transform;
+}
+
+/* Canvas UI */
+#tutorial {
+	position: absolute;
+	top: 50px;
+	font-size: 20px;
+	width: 100%;
+	text-align: center;
+	pointer-events: none;
+	z-index: 10;
+}
+
+/* Tool Selector UI */
+.choices {
+	position: absolute;
+	bottom: 50px;
+	width: 100%;
+	text-align: center;
+	user-select: none;
+	z-index: 1000;
+}
+
+.select-wrapper {
+	display: inline-block;
+	margin: 0 12px;
+	cursor: pointer;
+}
+
+.select {
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	border-radius: 40px;
+	border: 1px solid #000;
+	padding: 10px;
+	transition: all 0.2s ease;
+	background-color: #222;
+}
+
+.select.selected {
+	border-color: #fff;
+	transform: scale(1.1);
+}
+
+.select-name {
+	margin-top: 5px;
+	font-size: 14px;
+}
+
+/* Sauce Tool Button */
+#sauce-but {
+	background-color: #d63031;
+}
+
+/* Animations */
+@keyframes expand {
+	0% {
+		transform: scale(0);
+		opacity: 0.5;
+	}
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+/* Responsive */
+@media only screen and (max-width: 600px) {
+	body {
+		position: fixed;
+	}
+
+	.choices {
+		bottom: 30px;
+	}
+
+	#tutorial {
+		font-size: 16px;
+	}
+}
+</file>
+
+</files>

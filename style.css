@@ -43,6 +43,7 @@ html, body {
   
   .cheese {
     /* inherits .pasta */
+    z-index: 10;
   }
   
   .sauce {

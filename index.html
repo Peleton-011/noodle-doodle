@@ -9,6 +9,7 @@
 			href="https://fonts.googleapis.com/css?family=Roboto"
 			rel="stylesheet"
 		/>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 		<script src="/script.js" defer></script>
 	</head>
 	<body>
@@ -64,6 +65,9 @@
 
 				<button onclick="undo()">Undo</button>
 				<button onclick="redo()">Redo</button>
+
+				<button onclick="exportArt()">Export</button>
+                <button id="src-btn" onclick="captureScreen()">Capture Screenshot</button>
 			</div>
 
 			<div
@@ -71,5 +75,6 @@
 				style="position: relative; width: 100vw; height: 100vh"
 			></div>
 		</main>
+
 	</body>
 </html>

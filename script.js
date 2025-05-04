@@ -39,6 +39,64 @@ function toggleDrawMode() {
 	}
 }
 
+const captureScreen = async () => {
+	const screenshotBtn = document.querySelector("#src-btn");
+	try {
+		const stream = await navigator.mediaDevices.getDisplayMedia({
+			preferCurrentTab: true,
+		});
+		const video = document.createElement("video");
+
+		video.addEventListener("loadedmetadata", () => {
+			const canvas = document.createElement("canvas");
+			const ctx = canvas.getContext("2d");
+			canvas.width = video.videoWidth;
+			canvas.height = video.videoHeight;
+
+			video.play();
+
+			// Small delay to ensure frame is ready
+			setTimeout(() => {
+				ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+				stream.getVideoTracks()[0].stop();
+
+				// Download canvas as PNG
+				const link = document.createElement("a");
+				link.download = "macaroni-art-screenshot.png";
+				link.href = canvas.toDataURL("image/png");
+				link.click();
+			}, 100); // wait a bit after play() to ensure the frame is ready
+		});
+
+		video.srcObject = stream;
+	} catch (error) {
+		alert("Failed to capture screenshot!");
+		console.error(error);
+	}
+};
+
+function exportArtre() {
+	const canvasEl = document.getElementById("canvas");
+
+	// Force layout reflow (sometimes helps for async images)
+	canvasEl.offsetHeight;
+
+	html2canvas(canvasEl, {
+		backgroundColor: null,
+		useCORS: true,
+		allowTaint: true,
+		logging: true,
+		width: canvasEl.offsetWidth,
+		height: canvasEl.offsetHeight,
+		scrollY: -window.scrollY,
+	}).then((canvas) => {
+		const link = document.createElement("a");
+		link.download = "macaroni-art.png";
+		link.href = canvas.toDataURL("image/png");
+		link.click();
+	});
+}
+
 function undo() {
 	const el = placedElements.pop();
 	if (el) {
@@ -80,11 +138,14 @@ function draw(e) {
 			if (currentType === "sauce") {
 				const dot = document.createElement("div");
 				dot.classList.add(typeData.class);
-				dot.style = `position: absolute; left: ${x - 25}px; top: ${y - 25}px;`;
+				dot.style = `position: absolute; left: ${x - 25}px; top: ${
+					y - 25
+				}px;`;
 				canvas.appendChild(dot);
 				placedElements.push(dot);
 			} else {
 				const img = document.createElement("img");
+				img.crossOrigin = "anonymous";
 				img.src = typeData.src;
 				img.classList.add("pasta", typeData.class);
 				img.style.left = `${startX}px`;
@@ -102,6 +163,7 @@ function draw(e) {
 		const { x, y } = getCoords(e);
 		if (!floatingPasta) {
 			floatingPasta = document.createElement("img");
+			floatingPasta.crossOrigin = "anonymous";
 			floatingPasta.src = pastaTypes[currentType].src;
 			floatingPasta.classList.add("pasta", pastaTypes[currentType].class);
 			canvas.appendChild(floatingPasta);
@@ -130,15 +192,19 @@ canvas.addEventListener("click", (e) => {
 	}
 });
 
-window.addEventListener("wheel", (e) => {
-	if (drawMode === "precision") {
-		e.preventDefault();
-		angle += e.deltaY > 0 ? 5 : -5;
-		if (floatingPasta) {
-			floatingPasta.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
+window.addEventListener(
+	"wheel",
+	(e) => {
+		if (drawMode === "precision") {
+			e.preventDefault();
+			angle += e.deltaY > 0 ? 5 : -5;
+			if (floatingPasta) {
+				floatingPasta.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
+			}
 		}
-	}
-}, { passive: false });
+	},
+	{ passive: false }
+);
 
 ["mousedown", "touchstart"].forEach((evt) =>
 	window.addEventListener(evt, startDraw)
